@@ -366,6 +366,23 @@ function i(){
 
 }
 
-
-
 //DO THE JAVSCRIPT PART TO ADD THE TODOS AND ADD BUTTONS WHILE ADDING NEW TODOS
+
+
+const btnSubmit = document.getElementById("todo-button-add")
+const todoItems = document.getElementById("todo-items")
+const textInput = document.getElementById("todo-text")
+
+btnSubmit.addEventListener("click", () => {
+    let node = document.createElement("li")
+    node.textContent = textInput.value
+    node.classList.add("items")
+
+    let checkBtn = document.createElement("button")
+    checkBtn.classList.add("check-btn")
+    checkBtn.textContent = "-/"
+
+    node.appendChild(checkBtn)
+
+    todoItems.appendChild(node)
+})

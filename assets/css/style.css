@@ -23,6 +23,10 @@ ul{
     padding: 0;
 }
 
+.items{
+    margin: 5px;
+}
+
 .todo-list{
     width: 180px
 }
