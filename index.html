@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Javascript - Crash Course</title>
 </head>
@@ -36,20 +37,20 @@
             </ul>
         </ul>
     </section> -->
+    <div class="container">
+        <img src="assets/img/javascript_logo.png" alt="">
+        <h1>TODO - LIST</h1>
+        <form>
+            <input type="text" id="todo-text" placeholder="Text">
+            <button class="todo-button" type="submit"><i class="fas fa-plus-square"></i></button>
+        </form>
 
-    <h1>TODO - LIST</h1>
-    <div class="input">
-        <input type="text" id="todo-text">
-        <input type="submit" id="todo-button-add" value="+">
-    </div>
-
-    
-    <div class="todo-list">
-        <ul class="todo-items">
-            <li class="item">Item 1</li>
-            <li class="item">Item 2</li>
-            <li class="item">Item 3</li>
-        </ul>
+        <div class="notification hidden"></div>
+        
+        <div class="todo-container">
+            <ul class="todo-list">
+            </ul>
+        </div>
     </div>
     <script src="src/js/main.js"></script>
 </body>

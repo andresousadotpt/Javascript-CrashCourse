@@ -7,10 +7,22 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background-color: orange;
 }
 
 .container{
     margin-top: -15rem;
+    text-align: center;
+    background-color: white;
+    padding: 10rem;
+    padding-left: -30px;
+    margin-top: 10rem;
+    border-radius: 10%;
+}
+
+.container img{
+    width:100px;
+    height: auto;
 }
 
 ul{
@@ -21,8 +33,109 @@ ul{
 .todo-items{
     width: 100px;
     padding: 0;
+    display: inline;
 }
 
 .todo-list{
-    width: 180px
+    padding:0;
+    margin:0;
+}
+
+.todo{
+    text-align: left;
+    margin-top: 10px;
+}
+
+form input, form button{
+    padding: 0.5rem;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+}
+
+form button{
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+
+form button:hover{
+    background-color: orange;
+    color: white;
+    transition: opacity 1s ease-out;
+}
+
+.notification{
+    color: white;
+    border-radius: 2%;
+    padding: 5px;
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+
+.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.todo{
+    background-color: orange;
+    padding: 10px;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.todo li{
+    flex: 1;
+}
+
+.trash-btn, .complete-btn{
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.trash-btn{
+    background-color: red;
+}
+.complete-btn{
+    background-color: green;
+}
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.todo-list{
+    max-width: 600px;
+    width: 600px;
+}
+
+.item{
+
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+  
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }

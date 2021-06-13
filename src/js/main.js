@@ -369,3 +369,67 @@ function i(){
 
 
 //DO THE JAVSCRIPT PART TO ADD THE TODOS AND ADD BUTTONS WHILE ADDING NEW TODOS
+
+//SELECTORS
+const todoList = document.querySelector(".todo-list") //TODOLIST
+const inputText = document.getElementById("todo-text") //Input
+const inputBtn = document.querySelector(".todo-button") //InputBTN
+const errorNoText = document.querySelector(".notification") //InputBTN
+
+
+inputBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    if(inputText.value == ""){
+        errorNoText.style.backgroundColor = "red"
+        errorNoText.innerText = "Error nothing was entered"
+        errorNoText.classList.remove("hidden")
+        setTimeout(() => {
+            errorNoText.classList.add("hidden")
+        }, 2000);
+    } else {
+        errorNoText.style.backgroundColor = "green"
+        errorNoText.innerText = "Added to the list"
+        errorNoText.classList.remove("hidden")
+        setTimeout(() => {
+            errorNoText.classList.add("hidden")
+        }, 2000);
+
+
+        const todoDiv = document.createElement("div")
+        todoDiv.classList.add("todo")
+
+        const newTodo = document.createElement("li")
+        newTodo.innerText = inputText.value
+        newTodo.classList.add("item")
+        todoDiv.appendChild(newTodo)
+
+        const completedButton = document.createElement("button")
+        completedButton.innerHTML = "<i class='fas fa-check'> </i>"
+        completedButton.classList.add("complete-btn")
+        todoDiv.appendChild(completedButton)
+
+        const deleteButton = document.createElement("button")
+        deleteButton.innerHTML = "<i class='fas fa-trash'> </i>"
+        deleteButton.classList.add("trash-btn")
+        todoDiv.appendChild(deleteButton)
+
+
+        todoList.appendChild(todoDiv)
+
+        inputText.value = ""
+    }
+})
+
+todoList.addEventListener("click", deleteCheck)
+
+function deleteCheck(e){
+    if(e.target.classList[0] === "trash-btn"){
+        const todo = e.target.parentElement;
+        todo.remove()
+    }
+
+    if(e.target.classList[0] === "complete-btn"){
+        const todo = e.target.parentElement;
+        todo.classList.toggle("completed")
+    }
+}
